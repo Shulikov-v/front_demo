@@ -79,14 +79,17 @@ mock
     images: [
       {
         id: 1,
+        name: 'image#1',
         image: null
       },
       {
         id: 2,
+        name: 'image#2',
         image: null
       },
       {
         id: 3,
+        name: 'image#3',
         image: null
       },
     ]

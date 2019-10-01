@@ -1,11 +1,11 @@
 import React from 'react'
 
-function UserList({children}) {
+function PhotoList({ children }) {
   return (
-    <div className="row border border-primary user-list">
+    <div className="row border border-primary image-list">
       {children}
-    <style jsx>{`
-      .user-list {
+      <style jsx>{`
+      .image-list {
         padding: 10px;
         max-height: 400px;
         overflow: auto;
@@ -15,4 +15,4 @@ function UserList({children}) {
   )
 }
 
-export default UserList
+export default PhotoList

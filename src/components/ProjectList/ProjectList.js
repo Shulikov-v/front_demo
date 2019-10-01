@@ -2,8 +2,15 @@ import React from 'react'
 
 function ProjectList({children}) {
   return (
-    <div className="row border border-primary" style={{padding: 10, maxHeight: 400, overflow: 'auto'}}>
+    <div className="row border border-primary project-list">
       {children}
+      <style jsx>{`
+      .project-list {
+        padding: 10px;
+        max-height: 400px;
+        overflow: auto;
+      }
+    `}</style>
     </div>
   )
 }

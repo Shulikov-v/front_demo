@@ -6,8 +6,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store'
 
 import 'papercss/dist/paper.css';
-// import './index.css';
-import App from './layout/App';
+import App from './app/App';
 
 ReactDOM.render(
   <Provider store={store}>
