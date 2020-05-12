@@ -12,7 +12,7 @@ function Login({onSubmit}) {
       <h3>
         Login
       </h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} data-testid="form">
         <div className="form-group">
           <input type="text" placeholder="Login" className="input-block" name="login" ref={register} />
         </div>

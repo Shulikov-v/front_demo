@@ -99,14 +99,16 @@ mock
     id: 1,
     image: null
   })
+  
+  export const mockedAxios = axios;
 
 export default function* watchApplication() {
-  yield takeEvery(LOGIN_REQUEST, handleLoginRequest);
-  yield takeEvery(PROJECTS_REQUEST, handleProjectsRequest);
-  yield takeEvery(PROJECT_REQUEST, handleProjectRequest);
-  yield takeEvery(USER_REQUEST, handleUserRequest);
-  yield takeEvery(PHOTO_REQUEST, handlePhotoRequest);
-  yield takeEvery(ADD_USER_REQUEST, handleAddUserRequest);
+  yield takeEvery('LOGIN_REQUEST', handleLoginRequest);
+  yield takeEvery('PROJECTS_REQUEST', handleProjectsRequest);
+  yield takeEvery('PROJECT_REQUEST', handleProjectRequest);
+  yield takeEvery('USER_REQUEST', handleUserRequest);
+  yield takeEvery('PHOTO_REQUEST', handlePhotoRequest);
+  yield takeEvery('ADD_USER_REQUEST', handleAddUserRequest);
 }
 
 function* handleLoginRequest(action) {
@@ -142,9 +144,10 @@ function* handleProjectRequest(action) {
   }
 }
 
-function* handleUserRequest(action) {
+export function* handleUserRequest(action) {
   try {
-    const { data: user } = yield call(axios.get, `/user/${action.payload.id}`);
+    const result = yield call(axios.get, `/user/${action.payload.id}`);
+    const { data: user } = result;
     yield put(actionUserSuccess(user));
   } catch (error) {
     console.error(error);

@@ -7,13 +7,13 @@ import {
   PHOTO_SUCCESS
 } from "./consts";
 
-const initialState = {
+export const initialState = {
   isAuth: false,
   projects: [],
   users: []
 };
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {
